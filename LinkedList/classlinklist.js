@@ -69,7 +69,7 @@ class LinkedList {
 
     // if the index is 0 meaning you wish to append
     // the new Node to the beginning of the LinkedList...
-    // execute insertFirst method(recursively)
+    // execute insertFirst method
     if (index === 0) {
       this.insertFirst(data);
       return;
@@ -181,7 +181,7 @@ class LinkedList {
     let previous;
 
     // if you want to remove the first Node execute
-    // removeHead method(recursively)
+    // removeHead method
     if (index === 0) {
       this.removeHead();
       return;
