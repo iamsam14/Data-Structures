@@ -239,6 +239,21 @@ class LinkedList {
         this.size = 0;
         return;
     }
+    
+    reverseList() {
+        let previous = null;
+        let next = null;
+        let current = this.head;
+    
+        while(current) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        this.head = previous;
+        return;    
+    }
 }
 
 const ll = new LinkedList()
@@ -249,20 +264,22 @@ ll.addTail(20);
 ll.addTail(50);
 ll.addTail(100);
 
-ll.createLoopAt(2);
+// ll.createLoopAt(2);
 ll.addTail(200)
 
 // ll.removeHead();
 // ll.removeHead();
 // ll.removeHead();
 // ll.removeTail()
-ll.removeTail()
-ll.removeTail()
+// ll.removeTail()
+// ll.removeTail()
 
 // ll.addAt(11, 2)
 // ll.addAt(22, 4)
 // ll.removeAt(2)
 
+// ll.reverseList();
+
 ll.printData()
 
-// console.log(ll.detectCycle());
+// console.log(ll);
