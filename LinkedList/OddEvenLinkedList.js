@@ -4,14 +4,15 @@
  * First node is considered odd
  * 
  * Example:
- * Position    1   2   3   4   5
- *      Input: 1 - 2 - 3 - 4 - 5 - null
- *      Output: 1 - 3 - 5 - 2 - 4 - null
- * Position     1   3   5   2   4
- * Position    1   2   3   4   5   6
- *      Input: 2 - 4 - 7 - 1 - 5 - 9 - null
- *      Output: 2 - 7 - 5 - 4 - 1 - 9 - null
- * Position     1   3   5   2   4   6
+ * Original position  1   2   3   4   5
+ *             Input: 1 - 2 - 3 - 4 - 5 - null
+ *             Output: 1 - 3 - 5 - 2 - 4 - null
+ * Original position   1   3   5   2   4
+ * 
+ * Original position  1   2   3   4   5   6
+ *             Input: 2 - 4 - 7 - 1 - 5 - 9 - null
+ *             Output: 2 - 7 - 5 - 4 - 1 - 9 - null
+ * Original position   1   3   5   2   4   6
  * 
  * To do this we are going to take our LinkedList and split it up into two LinkedLists
  * 
@@ -39,7 +40,7 @@
  * Since there are no more Nodes after 9 in our even LinkedList we take our odd LinkedList 
  * which is also on the third Node and assign the even LinkedList to come after it
  */
-var oddEvenList = function(head) {
+const oddEvenList = function(head) {
     // If there is no head return empty LinkedList
     if(!head) return null;
     let odd = head;

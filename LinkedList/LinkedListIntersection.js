@@ -1,4 +1,4 @@
-var getIntersectionNode = function(headA, headB) {
+const getIntersectionNode = function(headA, headB) {
     
 /**
 *   Switch LinkedList at the end so you even out un-even LinkedLists 
@@ -19,7 +19,7 @@ var getIntersectionNode = function(headA, headB) {
 *   A will follow 4 - 5 - 6 - 7 - 8 - 2 - 0 - 5
 *   B will follow 2 - 0 - 5 - 6 - 7 - 8 - 4 - 5 
 *                                        (^)Switch to listA
-*   After switching tracks the pointers either reach the intersection 
+*   After switching lists the pointers either reach the intersection 
 *   or both become null and exits the loop returning null
 */ 
 

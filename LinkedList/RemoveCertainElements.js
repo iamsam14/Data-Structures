@@ -6,7 +6,7 @@
  * Output: 2 - 3
  * 
  */
-var removeElements = function(head, val) {
+const removeElements = function(head, val) {
     // If there is no head return the empty LinkedList
     if(!head) return head;
 
