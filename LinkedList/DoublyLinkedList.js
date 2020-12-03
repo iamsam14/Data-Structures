@@ -4,7 +4,7 @@ const Node = function(val = null, prev = null, next = null) {
     this.next = next;
 }
 
-var MyLinkedList = function() {
+const MyLinkedList = function() {
     this.size = 0;
     this.head = new Node();
     this.tail = new Node();

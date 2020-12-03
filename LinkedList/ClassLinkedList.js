@@ -1,8 +1,6 @@
-class Node {
-  constructor(data, next = null) {
+const Node = function(data = null, next = null) {
     this.data = data;
     this.next = next;
-  }
 }
 // Instantiation of Node class meaning all new *Node*s look like:
 // Node: {data: input, next: null}
@@ -10,16 +8,14 @@ class Node {
 // const n1 = new Node(50);
 // console.log(n1);
 
-class LinkedList {
-  constructor() {
+const LinkedList = function() {
     this.head = null;
     this.size = 0;
-  }
   // Instantiation of LinkedList class meaning all new *LinkedList*s look like:
   // LinkedList: {head: null, size: 0}
 
   // Insert first
-  insertFirst(data) {
+  LinkedList.prototype.insertFirst = function(data) {
     // The head of the LinkedList class object becomes the
     // new instantiation of the class object Node
     // if there is a previously existing this.head
@@ -32,7 +28,7 @@ class LinkedList {
   }
 
   //insert last
-  insertLast(data) {
+  LinkedList.prototype.insertLast = function(data) {
     //   Instantiation of a new Node class object
     let node = new Node(data);
 
@@ -61,7 +57,7 @@ class LinkedList {
   }
 
   // insert at
-  insertAt(data, index) {
+  LinkedList.prototype.insertAt = function(data, index) {
     //   if the index passed does not exist exit function
     if (index > 0 && index > this.size) {
       return;
@@ -106,7 +102,7 @@ class LinkedList {
   }
 
   // remove first
-  removeHead() {
+  LinkedList.prototype.removeHead = function() {
     //   if there are no Nodes inside the LinkedList then
     // there is no head
     if (!this.size) {
@@ -122,7 +118,7 @@ class LinkedList {
   }
 
   //   remove last
-  removeLast() {
+  LinkedList.prototype.removeLast = function() {
     //   start current at the beginning of the LinkedList
     let current = this.head;
     let previous;
@@ -143,10 +139,10 @@ class LinkedList {
   }
 
     // remove at
-    removeAt(index) {
+    LinkedList.prototype.removeAt = function(index) {
       // if the index is greater than the size of the
       // LinkedList return not found
-      if (index > 0 && index > this.size) {
+      if (index > 0 && index >= this.size) {
         return console.log("Index not found");
       }
   
@@ -183,7 +179,13 @@ class LinkedList {
     }
 
   // get at
-  getIndex(index) {
+  LinkedList.prototype.getIndex = function(index) {
+      // if the index is greater than the size of the
+      // LinkedList return not found
+      if (index > 0 && index >= this.size) {
+        return console.log("Index not found");
+      }
+
     //   Start at the beginning of the LinkedList
     let current = this.head;
 
@@ -206,7 +208,7 @@ class LinkedList {
   }
 
   // clear
-  clearList() {
+  LinkedList.prototype.clearList = function() {
     // Reset the values of LinkedList to null
     this.head = null;
     this.size = 0;
@@ -214,7 +216,7 @@ class LinkedList {
   }
 
   // print data
-  printData() {
+  LinkedList.prototype.printData = function() {
     //   start at the beginning of the LinkedList
     let current = this.head;
 
@@ -235,19 +237,19 @@ ll.insertLast(10);
 
 ll.insertAt(20, 1);
 
-// ll.removeHead();
-// ll.removeLast();
+ll.removeHead();
+ll.removeLast();
 
-// ll.printData();
+ll.printData();
 
-// console.log("looking for index 2");
-// ll.getIndex(2);
+console.log("looking for index 2");
+ll.getIndex(2);
 
-// console.log("now lets remove index 2");
-// ll.removeAt(2);
+console.log("now lets remove index 2");
+ll.removeAt(2);
 
 ll.printData();
 
 
-// ll.clearList();
-// console.log(ll);
+ll.clearList();
+console.log(ll);
